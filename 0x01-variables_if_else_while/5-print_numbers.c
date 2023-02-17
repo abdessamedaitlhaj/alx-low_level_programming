@@ -1,6 +1,6 @@
 #include<stdio.h>
 /**
- * mian - Print all decimal digit from 0-9
+ * main - Print all decimal digit from zero to nine
  * Return: Always 0 (Sucess)
  */
 int main(void)
