@@ -10,11 +10,8 @@ int main(void)
 	int i;
 
 	for (i = 0; i < 26; i++)
-	{
-	if (alphabet[i] != 'e' || alphabet[i] != 'q')
-		continue;
-	putchar(alphabet[i]);
-	}
+		if (alphabet[i] != 'e' && alphabet[i] != 'q')
+			putchar(alphabet[i]);
 	putchar('\n');
 	return (0);
 }
