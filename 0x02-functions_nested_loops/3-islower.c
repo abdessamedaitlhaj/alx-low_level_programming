@@ -12,9 +12,7 @@ int _islower(int c)
 	for (c0 = 'a'; c0 < 'z'; c0++)
 		if (c == c0)
 		{
-			_putchar('\n');
 			return (1);
 		}
-	_putchar('\n');
 	return (0);
 }
