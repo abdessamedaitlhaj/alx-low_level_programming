@@ -1,7 +1,6 @@
 #include "main.h"
 /**
  * print_alphabet - Function that print alphabets
- * Return: Always 0
  */
 void print_alphabet(void)
 {
@@ -13,5 +12,4 @@ void print_alphabet(void)
 		i++;
 	}
 	_putchar('\n');
-	return (0);
 }
