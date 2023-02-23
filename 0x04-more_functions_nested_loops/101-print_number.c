@@ -7,29 +7,43 @@
  */
 void print_number(int n)
 {
-	unsigned int m, d, count;
+	int i, division, s = 1, size = 0;
+
+	division = n;
 
 	if (n < 0)
 	{
-		_putchar(45);
-		m = n * -1;
+		putchar(45);
+		n = -1 * n;
 	}
+	if (n == 0)
+	putchar('0');
 	else
 	{
-		m = n;
+		while (division)
+		{
+			division = division / 10;
+			size++;
+		}
+
+		division = n;
+
+		for (i = 0; i < size - 1; i++)
+			s *= 10;
+		
+		for (i = 0 ; i < size; i++)
+		{
+			division = n / s;
+
+			if (i == 0)
+			{
+				putchar(division + '0');
+				s /= 10;
+				continue;
+			}
+			putchar((division % 10) + '0');
+			s /= 10;
 	}
-
-	d = m;
-	count = 1;
-
-	while (d > 9)
-	{
-		d /= 10;
-		count *= 10;
-	}
-
-	for (; count >= 1; count /= 10)
-	{
-		_putchar(((m / count) % 10) + 48);
+	putchar('\n');
 	}
 }
