@@ -3,8 +3,8 @@
 
 /**
  * print_remaining_days - Converts a date to the day of year
- * @month: month 
- * @day: day 
+ * @month: month
+ * @day: day
  * @year: year
  * Return: void
  */
