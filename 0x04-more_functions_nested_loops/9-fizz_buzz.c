@@ -22,6 +22,6 @@ int main(void)
 			printf("Buzz ");
 		else
 			printf("%d ", i);
-	printf("\n");
+	putchar('\n');
 	return (0);
 }
