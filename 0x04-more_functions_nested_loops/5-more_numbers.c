@@ -19,4 +19,5 @@ void more_numbers(void)
 			if ((j == 4 && i == 1) || (j == 9 && i == 0))
 				break;
 		}
+	_putchar('\n');
 }
