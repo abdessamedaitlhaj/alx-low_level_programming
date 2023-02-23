@@ -1,13 +1,8 @@
-#include<stdio.h>
+#include <stdio.h>
+
 /**
- * main - FizzBuzz game
- *
- * Description: Program that prints numbers
- * from 1 to 100. But for multiples of three print
- * 'Fizz' instead of the number and for the multiples
- * of five print 'Buzz'. For numbers which are
- * multiples of both three and five print FizzBuzz.
- * Return: 0 Always Sucess
+ * main - prints Buzz each numbers of 3 and 5.
+ * Return: void
  */
 int main(void)
 {
