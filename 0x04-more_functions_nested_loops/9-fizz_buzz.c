@@ -1,4 +1,3 @@
-#include "main.h"
 #include<stdio.h>
 /**
  * main - FizzBuzz game
@@ -23,6 +22,6 @@ int main(void)
 			printf("Buzz ");
 		else
 			printf("%d ", i);
-	_putchar('\n');
+	printf('\n');
 	return (0);
 }
