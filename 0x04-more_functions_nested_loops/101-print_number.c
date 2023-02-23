@@ -1,11 +1,10 @@
 #include "main.h"
 
 /**
- * print_number - P prints an integer using putchar
+ * print_number - Prints an integer using putchar
  * @n: The interger to print
  *
- * Description: Function that print any integer
- * using only putchar
+ * Description: Function that print anygiven  integer
  * Return: Void
  */
 void print_number(int n)
