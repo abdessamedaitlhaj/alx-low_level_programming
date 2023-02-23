@@ -1,8 +1,10 @@
 #include <stdio.h>
 
 /**
- * main - prints Buzz each numbers of 3 and 5.
- * Return: void
+ * main - FizzBuzz game
+ *
+ * Description: FizzBuzz game
+ * Return: Void
  */
 int main(void)
 {
