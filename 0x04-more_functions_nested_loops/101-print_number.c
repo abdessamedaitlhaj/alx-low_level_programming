@@ -1,5 +1,4 @@
 #include "main.h"
-#include<stdio.h>
 /**
  * print_number - P prints an integer using putchar
  * @n: The interger to print
