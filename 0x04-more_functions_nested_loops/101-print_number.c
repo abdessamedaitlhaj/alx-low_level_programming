@@ -30,7 +30,6 @@ void print_number(int n)
 
 		for (i = 0; i < size - 1; i++)
 			s *= 10;
-		
 		for (i = 0 ; i < size; i++)
 		{
 			division = n / s;
