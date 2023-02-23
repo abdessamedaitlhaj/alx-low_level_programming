@@ -1,1 +1,1 @@
-<h2>C - Debugging Tasks<h2/>
+<h2>C - Debugging</h2>
