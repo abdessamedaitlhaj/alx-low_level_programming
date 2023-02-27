@@ -13,8 +13,13 @@ void print_array(int *a, int n)
 
 	p = a;
 	printf("%d", *p);
-
-	for (p = a + 1; p < a + n; p++)
+	n--;
+	p++;
+	while (n)
+	{
 		printf(", %d", *p);
+		p++;
+		n--;
+	}
 	_putchar('\n');
 }
