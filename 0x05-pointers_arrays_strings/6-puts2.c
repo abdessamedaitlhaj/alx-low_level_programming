@@ -7,8 +7,6 @@
  */
 void puts2(char *str)
 {
-	char *p;
-
 	int i = 0;
 
 
