@@ -12,8 +12,6 @@ void rev_string(char *s)
 	char c;
 
 	i = 0;
-	if (s[i] != '\0')
-	{
 	while (s[i] != '\0')
 	{
 		length++;
@@ -25,6 +23,4 @@ void rev_string(char *s)
 		s[i] = s[j];
 		s[j] = c;
 	}
-	}
-	_putchar('\n');
 }
