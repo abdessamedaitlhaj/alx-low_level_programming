@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * puts2 - print odd of a string
+ * puts2 - print even of a string
  * @str: string to check
  *
  * Return: nothing
