@@ -21,7 +21,7 @@ void rev_string(char *s)
 	{
 		c = *p;
 		*p = *q;
-	        *q = c;
+		*q = c;
 	}
 	_putchar('\n');
 }
