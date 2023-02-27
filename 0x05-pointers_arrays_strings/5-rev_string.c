@@ -12,6 +12,8 @@ void rev_string(char *s)
 	char c;
 
 	i = 0;
+	if (s != NULL)
+	{
 	while (s[i] != '\0')
 	{
 		length++;
@@ -22,6 +24,7 @@ void rev_string(char *s)
 		c = s[i];
 		s[i] = s[j];
 		s[j] = c;
+	}
 	}
 	_putchar('\n');
 }
