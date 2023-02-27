@@ -11,18 +11,18 @@ void print_array(int *a, int n)
 {
 	int *p;
 
-	if ( n > 0)
+	if (n > 0)
 	{
-	p = a;
-	printf("%d", *p);
-	n--;
-	p++;
-	while (n)
-	{
-		printf(", %d", *p);
-		p++;
+		p = a;
+		printf("%d", *p);
 		n--;
-	}
+		p++;
+		while (n)
+		{
+			printf(", %d", *p);
+			p++;
+			n--;
+		}
 	}
 	printf("\n");
 }
