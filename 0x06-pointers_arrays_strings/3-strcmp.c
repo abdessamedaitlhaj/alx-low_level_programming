@@ -8,15 +8,11 @@
  */
 int _strcmp(char *s1, char *s2)
 {
-	char *p, *q;
-
-	for (p = s1, q = s2;; p++, q++)
+	while ((*s1 && *s2) && (*s1 == *s2))
 	{
-		if (*p > *q)
-			return (*p - *q);
-		else if (*p < *q)
-			return (*p - *q);
-		else
-			return (*p - *q);
+		s1++;
+		s2++;
 	}
+
+	return (*s1 - *s2);
 }
