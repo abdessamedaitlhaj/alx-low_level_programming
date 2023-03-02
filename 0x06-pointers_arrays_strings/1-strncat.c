@@ -11,16 +11,29 @@ char *_strncat(char *dest, char *src, int n)
 {
 	char *p, *q;
 
+	int length = 0;
+
+	for (p = src; *p != '\0'; p++, length++)
+	{}
+
 	for (p = dest; ; p++)
 	{
 		if (*p == '\0')
 		{
-			for (q = src; n > 0; q++)
-			{
-				*p = *q;
-				p++;
-				n--;
-			}
+			if (n > length)
+				for (q = src; *q != '\0'; q++)
+				{
+					*p = *q;
+					p++;
+				}
+			else
+				for (q = src; n > 0; q++)
+				{
+					*p = *q;
+					p++;
+					n--;
+				}
+
 			*p = '\0';
 			break;
 		}
