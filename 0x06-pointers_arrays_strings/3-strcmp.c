@@ -10,9 +10,7 @@ int _strcmp(char *s1, char *s2)
 {
 	char *p, *q;
 
-	p = s1;
-	q = s2;
-	while (*p || *q)
+	for (p = s1, q = s2;; p++, q++)
 	{
 		if (*p > *q)
 			return (*p - *q);
@@ -20,6 +18,5 @@ int _strcmp(char *s1, char *s2)
 			return (*p - *q);
 		else
 			return (*p - *q);
-		p++; q++;
 	}
 }
