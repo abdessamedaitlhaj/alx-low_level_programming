@@ -10,7 +10,7 @@ int _strcmp(char *s1, char *s2)
 {
 	char *p, *q;
 
-	for (p = s1, q = s2;; p++, q++)
+	for (p = s1, q = s2; *p != '\0' || *q != '\0'; p++, q++)
 	{
 		if (*p > *q)
 			return (*p - *q);
