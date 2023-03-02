@@ -9,7 +9,7 @@ char *string_toupper(char *s)
 {
 	char *p;
 
-	for (p = s; *p < '\0'; p++)
+	for (p = s; *p != '\0'; p++)
 	{
 		if (*p >= 97 && *p <= 122)
 		{
