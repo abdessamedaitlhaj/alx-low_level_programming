@@ -24,11 +24,12 @@ int len(char *s)
 int pal(char *s, int i)
 {
 	int l;
+	char *start;
+	char *end;
 
 	l = len(s);
-	char *start = s;
-
-	char *end  = s + l - 1 - i;
+	start = s;
+	end = s + l - 1 - i;
 
 	if (i >= l / 2 && *start == *end)
 		return (1);
