@@ -27,5 +27,5 @@ int _sqrt_recursion(int n)
 	else if (n == 1)
 		return (1);
 	else
-		return (find(m, 2));
+		return (find(n, 2));
 }
