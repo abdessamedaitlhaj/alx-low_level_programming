@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
-			f = strtol(argv[i], NULL, 10);
+			f = atoi(argv[i]);
 			if (f > 0)
 				sum += f;
 			else
