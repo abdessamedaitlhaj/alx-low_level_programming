@@ -19,13 +19,13 @@ int main(int argc, char *argv[])
 		for (i = 1; i < argc; i++)
 		{
 			f = strtol(argv[i], NULL, 10);
-			if (f <= 0)
+			if (f > 0)
+				sum += f;
+			else
 			{
 				printf("Error\n");
 				return (1);
 			}
-			else
-				sum += f;
 		}
 		printf("%d\n", sum);
 	}
