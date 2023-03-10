@@ -8,7 +8,7 @@
  */
 int main(int argc, char *argv[])
 {
-	argv[0];
+	argv;
 	printf("%d\n", argc - 1);
 	return (0);
 }
