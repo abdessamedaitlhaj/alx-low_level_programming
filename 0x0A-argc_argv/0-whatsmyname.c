@@ -1,5 +1,5 @@
 #include<stdio.h>
-
+#include<string.h>
 /**
  * main - print a program's name
  * @argc: number of argument passed command line
@@ -9,5 +9,9 @@
  */
 int main(int argc, char *argv[])
 {
-	printf("%s\n", argv[0]);
+	int i;
+
+	for (i = 0; i < strlen(argv[0]); i++)
+		_putchar(argv[0][i]);
+	_putchar('\n');
 }
