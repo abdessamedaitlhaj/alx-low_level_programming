@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<ctype.h>
 
 /**
  * main - print a program's name
@@ -11,6 +12,7 @@
 int main(int argc, char *argv[])
 {
 	int i, sum;
+	char *s;
 
 	sum = 0;
 	if (argc  == 1)
@@ -18,13 +20,16 @@ int main(int argc, char *argv[])
 	else
 	{
 		for (i = 1; i < argc; i++)
-			if (atoi(argv[i]))
-				sum = sum + atoi(argv[i]);
-			else
+		{
+			s = argv[i];
+			while(*s)
+			if (!isdigit(*s++))
 			{
 				printf("Error\n");
 				return (1);
 			}
+			sum += atoi(argv[i]);
+		}
 	printf("%d\n", sum);
 	}
 	return (0);
