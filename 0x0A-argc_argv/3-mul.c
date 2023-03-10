@@ -16,6 +16,9 @@ int main(int argc, char *argv[])
 	if (argc == 3)
 		printf("%d\n", n1 * n2);
 	else
+	{
 		printf("Error");
-	return (1);
+		return (1);
+	}
+	return (0);
 }
