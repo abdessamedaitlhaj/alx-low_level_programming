@@ -3,11 +3,12 @@
 /**
  * main - print a program's name
  * @argc: number of argument passed command line
- *
+ * @argv: an array of strings
  * Return: 0 Always
  */
-int main(int argc)
+int main(int argc, char *argv[])
 {
+	argv[argc - 1];
 	printf("%d\n", argc - 1);
 	return (0);
 }
