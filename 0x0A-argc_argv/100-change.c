@@ -12,13 +12,12 @@ int main(int argc, char *argv[])
 {
 	int number, min = 0, a, b, c;
 
-	number = atoi(argv[1]);
-	if (argc != 2)
+	if (argc != 2 || argc == 1)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	if (number < 0)
+	if (number <= 0)
 	{
 		printf("0\n");
 		return (0);
