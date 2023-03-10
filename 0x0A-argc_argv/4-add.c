@@ -10,24 +10,19 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, sum = 0, f;
+	int i, sum;
 
-	if (argc == 1)
-		printf("0\n");
+	sum = 0;
+	if (argc  == 1)
+		printf("%d\n", 0);
 	else
-	{
 		for (i = 1; i < argc; i++)
-		{
-			f = atoi(argv[i]);
-			if (f > 0)
-				sum += f;
+			if (atoi(argv[i]))
+				sum = sume + atoi(argv[i]);
 			else
 			{
 				printf("Error\n");
 				return (1);
 			}
-		}
-		printf("%d\n", sum);
-	}
-	return (0);
+	printf("%d\n", sum);
 }
