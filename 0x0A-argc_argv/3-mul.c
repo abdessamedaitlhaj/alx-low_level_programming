@@ -9,7 +9,6 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, result = 1, number;
 	int n1 = strtol(argv[argc - 2], NULL, 10);
 	int n2 = strtol(argv[argc - 1], NULL, 10);
 	
