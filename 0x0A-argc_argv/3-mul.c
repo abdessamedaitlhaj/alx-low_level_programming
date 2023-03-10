@@ -10,16 +10,11 @@
 int main(int argc, char *argv[])
 {
 	int i, result = 1, number;
-
-	if (argc > 1)
-	{
-		for (i = 1; i < argc; i++)
-		{
-			number = strtol(argv[i], NULL, 10);
-			result *= number;
-		}
-		printf("%d\n", result);
-	}
+	int n1 = strtol(argv[1], NULL, 10);
+	int n2 = strtol(argv[2], NULL, 10);
+	
+	if (argc == 3)
+		printf("%d\n", n1 * n2);
 	else
 		printf("Error");
 	return (1);
