@@ -29,6 +29,8 @@ int len(char *s)
  */
 void set(char *s1, char *s2)
 {
+	int i;
+
 	i = 0;
 	while (*s2)
 	{
@@ -37,7 +39,6 @@ void set(char *s1, char *s2)
 		i++;
 	}
 	s1[i] = '\0';
-	return (s1);
 }
 /**
  * str_concat - concatenate rwo strings.
@@ -49,7 +50,6 @@ void set(char *s1, char *s2)
 char *str_concat(char *s1, char *s2)
 {
 	char *s1s2;
-	char *tmp1, *tmp2;
 	int i;
 
 	s1s2 = malloc(sizeof(char) * (len(s1) + len(s2) - 1));
