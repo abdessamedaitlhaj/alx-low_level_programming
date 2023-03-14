@@ -84,7 +84,7 @@ char *str_concat(char *s1, char *s2)
 		s[len(s1) + len(s2)] = '\0';
 	}
 	else
-		s[0] = '\0';
+		s[0] = "";
 
 	return (s);
 }
