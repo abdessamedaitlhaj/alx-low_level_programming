@@ -11,6 +11,7 @@
 int len(char *s)
 {
 	int i = 0, length;
+
 	if (s == NULL || s[0] == '\0')
 		return (0);
 	while (s[i])
