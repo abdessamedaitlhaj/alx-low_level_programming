@@ -23,23 +23,20 @@ int len(char *s)
 }
 
 /**
- * set - copy string.
+ * set - set a string.
  * @a: first string.
  * @b: second string.
- * @j: where set start assignment.
  *
- * Return: void
+ * Return: pointer to modified string.
  */
-char *set(char *a, char *b, int j)
+char *set(char *a, char *b)
 {
-	int i;
+	int i = 0;
 
-	i = 0;
-	while (b[i])
+	while (b[i] != '\0')
 	{
-		a[j] = b[i];
+		a[i] = b[i];
 		i++;
-		j++;
 	}
 	return (a);
 }
@@ -52,31 +49,42 @@ char *set(char *a, char *b, int j)
  */
 char *str_concat(char *s1, char *s2)
 {
-	char *s1s2;
+	char *s;
+	int i;
 
-	if ((s1 == NULL && s2 == NULL) || (s1[0] == '\0' && s2[0] == '\0'))
-	s1s2 = '\0';
-
-	s1s2 = (char *) malloc(sizeof(char) * (len(s1) + len(s2) + 1));
-
-	if (s1s2 == NULL)
-		return (NULL);
-	if (s1 && s2)
+	if ((s1 == NULL || s1[0] == '\0') && s2)
 	{
-		s1s2 = set(s1s2, s1, 0);
-	    s1s2 = set(s1s2, s2, len(s1));
-	    *(s1s2 + len(s1) + len(s2)) = '\0';
+		s = malloc(sizeof(char) * (len(s2) + 1));
+		if (s == NULL)
+			return (NULL);
+		s = set(s, s2);
+		s[len(s2)] = '\0';
 	}
-	else if (s1 && (s2 == NULL || s2[0] == '\0'))
+	else if ((s2 == NULL || s2[0] == '\0') && s1)
 	{
-		s1s2 = set(s1s2, s1, 0);
-	    *(s1s2 + len(s1)) = '\0';
+		s = malloc(sizeof(char) * (len(s1) + 1));
+		if (s == NULL)
+			return (NULL);
+		s = set(s, s1);
+		s[len(s1)] = '\0';
 	}
-	else if (s2 && (s1 == NULL || s1[0] == '\0'))
+	else if (s2 && s1)
 	{
-		s1s2 = set(s1s2, s2, 0);
-		*(s1s2 + len(s2)) = '\0';
+		s = malloc(sizeof(char) * (len(s1) + len(s2) + 1));
+		if (s == NULL)
+			return (NULL);
+		s = set(s, s1);
+		i = 0;
+		while (s2[i])
+		{
+			(s + len(s1))[i] = s2[i];
+			i++;
+		}
+		s = set(s + len(s1), s2);
+		s[len(s1) + len(s2)] = '\0';
 	}
+	else
+		s[0] = '\0';
 
-	return (s1s2);
+	return (s);
 }
