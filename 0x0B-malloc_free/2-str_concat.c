@@ -64,17 +64,17 @@ char *str_concat(char *s1, char *s2)
 	    s1s2 = set(s1s2, s2, len(s1));
 	    *(s1s2 + len(s1) + len(s2)) = '\0';
 	}
-	else if (s1 && s2 == NULL)
+	else if (s1 && (s2 == NULL || s2[0] == '\0'))
 	{
 		s1s2 = set(s1s2, s1, 0);
 	    *(s1s2 + len(s1)) = '\0';
 	}
-	else if (s2 && s1 == NULL)
+	else if (s2 && (s1 == NULL || s1[0] == '\0'))
 	{
 		s1s2 = set(s1s2, s2, 0);
 		*(s1s2 + len(s2)) = '\0';
 	}
-	else
+	if ((s1 == NULL && s2 == NULL) || (s1[0] == '\0' && s2[0] == '\0'))
 		return (NULL);
 
 
