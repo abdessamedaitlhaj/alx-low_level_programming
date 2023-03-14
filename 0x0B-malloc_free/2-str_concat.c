@@ -22,23 +22,24 @@ int len(char *s)
 
 /**
  * set - copy string.
- * @s1: first string.
- * @s2: second string.
+ * @a: first string.
+ * @b: second string.
+ * @j: where set start assignment.
  *
  * Return: void
  */
-void set(char *s1, char *s2)
+char *set(char *a, char *b, int j)
 {
 	int i;
 
 	i = 0;
-	while (*s2)
+	while (b[i])
 	{
-		s1[i] = *s2;
-		s2++;
+		a[j] = b[i];
 		i++;
+		j++;
 	}
-	s1[i] = '\0';
+	return (a);
 }
 /**
  * str_concat - concatenate rwo strings.
@@ -50,36 +51,30 @@ void set(char *s1, char *s2)
 char *str_concat(char *s1, char *s2)
 {
 	char *s1s2;
-	int i;
 
-	s1s2 = malloc(sizeof(char) * (len(s1) + len(s2) - 1));
+	s1s2 = (char *) malloc(sizeof(char) * (len(s1) + len(s2) + 1));
 
 	if (s1s2 == NULL)
 		return (NULL);
+	if (s1 && s2)
+	{
+		s1s2 = set(s1s2, s1, 0);
+	    s1s2 = set(s1s2, s2, len(s1));
+	    *(s1s2 + len(s1) + len(s2)) = '\0';
+	}
+	else if (s1 && s2 == NULL)
+	{
+		s1s2 = set(s1s2, s1, 0);
+	    *(s1s2 + len(s1)) = '\0';
+	}
+	else if (s2 && s1 == NULL)
+	{
+		s1s2 = set(s1s2, s2, 0);
+		*(s1s2 + len(s2)) = '\0';
+	}
+	else
+		return (NULL);
 
-	if (s1 == NULL && s2)
-	{
-		set(s1s2, s2);
-		return (s1s2);
-	}
-	if (s2 == NULL && s1)
-	{
-		set(s1s2, s1);
-		return (s1s2);
-	}
-	i = 0;
-	while (*s1)
-	{
-		s1s2[i] = *s1;
-		s1++;
-		i++;
-	}
-	while (*s2)
-	{
-		s1s2[i - 1] = *s2;
-		s2++;
-		i++;
-	}
-	s1s2[i] = '\0';
+
 	return (s1s2);
 }
