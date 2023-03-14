@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * _strdu - return a pointer to the new string.
+ * _strdup - return a pointer to the new string.
  * @str: old string.
  *
  * Return: pointer to the newest one. NULL otherwise.
@@ -23,7 +23,13 @@ char *_strdup(char *str)
 	if (!new_str)
 		return (NULL);
 
-	new_str = str;
 
+	i = 0;
+	while (str[i])
+	{
+		new_str[i] = str[i];
+		i++;
+	}
+	new_str[i] = '\0';
 	return (new_str);
 }
