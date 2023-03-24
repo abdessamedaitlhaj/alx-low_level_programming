@@ -36,6 +36,7 @@ void print_all(const char * const format, ...)
 						break;
 					putchar(str[j++]);
 				}
+				break;
 			case 'f':
 				printf("%f", va_arg(args, double));
 				break;
