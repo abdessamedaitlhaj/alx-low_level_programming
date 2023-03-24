@@ -22,7 +22,7 @@ void print_all(const char * const format, ...)
 		switch (c)
 		{
 			case 'c':
-				printf("%c", va_arg(args, int));
+				printf("%c", (char)va_arg(args, int));
 				break;
 			case 's':
 				if (va_arg(args, char *) == NULL)
