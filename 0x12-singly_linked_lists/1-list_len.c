@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * list_len - return the number of elements of a list. 
+ * list_len - return the number of elements of a list.
  * @h: the list to be printed.
  *
  * Return: the list. NULL otherwise.
