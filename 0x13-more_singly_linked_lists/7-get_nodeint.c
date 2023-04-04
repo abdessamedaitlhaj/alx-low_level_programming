@@ -21,6 +21,8 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 			len++;
 			tmp = tmp->next;
 		}
+		if (idx >= len)
+			return (NULL);
 
 		for (i = 0; i <= index; i++)
 		{
