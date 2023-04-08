@@ -10,7 +10,7 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd, n;
+	int fd, n, m;
 	char *buf;
 
 	if (filename == NULL)
@@ -29,13 +29,13 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		if (n == -1)
 			return (0);
 
-		n = write(1, buf, letters);
+		m = write(1, buf, letters);
 
-		if (n == -1)
+		if (m == -1)
 			return (0);
 
 		close(fd);
 	}
 
-	return (n);
+	return (m == n ? m : 0);
 }
