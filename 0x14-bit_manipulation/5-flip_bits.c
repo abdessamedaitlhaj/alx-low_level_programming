@@ -5,12 +5,12 @@
  * @n: number to flip.
  * @m: desired number to get.
  *
- * Return: number of bit to jump into this number. -1 otherwise.
+ * Return: number of bit to jump into this number. 
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
 	unsigned long int c, bin = 1;
-	int len = 0;
+	unsigned int len = 0;
 
 	c = n ^ m;
 	while (bin <= c)
