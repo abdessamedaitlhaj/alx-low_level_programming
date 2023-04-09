@@ -5,7 +5,7 @@
  * @n: number to flip.
  * @m: desired number to get.
  *
- * Return: number of bit to jump into this number. 
+ * Return: number of bit to jump into this number.
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
