@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp %s %s\n", argv[1], argv[2]);
+		dprintf(STDERR_FILENO, "Usage: %s %s %s\n",argv[0], argv[1], argv[2]);
 		exit(97);
 	}
 
