@@ -49,7 +49,7 @@ int main(int argc, char **argv)
 	}
 	while ((n = read(fd2, buffer, sizeof(buffer))) > 0)
 	{
-		if (write(fd1, buffer, n) == -1)
+		if (write(fd1, buffer, n) != n)
 		{
 			close_fd(fd1);
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
