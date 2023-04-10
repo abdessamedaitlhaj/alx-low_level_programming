@@ -21,21 +21,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (fd == -1)
 		return (0);
 
-	buf = malloc (sizeof(char) * (letters + 1));
-	if (!buf)
-		return (0);
+	buf = (char *)malloc(sizeof(char) * (letters + 1));
 
-	while ((n = read(fd, buf, letters) > 0) && letters)
-	{
-		if (write(STDOUT_FILENO, buf, n) != n)
-		{
-			close(fd);
-			return (0);
-		}
-		letters = letters - n;
-	}
+	n = read(fd, buf, letters) > 0) && letters)
 	if (n == -1)
 		return (0);
+	write(STDOUT_FILENO, buf, n);
 
 	if (close(fd) == -1)
 		return (0);
