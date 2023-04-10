@@ -22,21 +22,30 @@ int main(int argc, char **argv)
 
 	fd1 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR |
 						S_IRGRP | S_IWGRP | S_IROTH);
-
+	if (fd1 == -1)
+	{
+		dprintf(2, "Error: Can't write to %s\n", argv[2]);
+		exit(99);
+	}
 	fd2 = open(argv[1], O_RDONLY);
 
-	while ((n = read(fd2, buffer, sizeof(buffer))) != 0)
+	if (fd2 == -1)
 	{
-		if (n == -1 || fd2 == -1)
-		{
-			dprintf(2, "Error: Can't read from file %s\n", argv[1]);
-			exit(98);
-		}
+		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
+	while ((n = read(fd2, buffer, sizeof(buffer))) > 0)
+	{
 		if (write(fd1, buffer, n) == -1 || fd1 == -1)
 		{
 			dprintf(2, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
+	}
+	if (n == -1)
+	{
+		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
 	}
 	if (close(fd1) == -1)
 	{
