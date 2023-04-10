@@ -51,14 +51,12 @@ int main(int argc, char **argv)
 	{
 		if (write(fd1, buffer, n) != n)
 		{
-			close_fd(fd1);
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
 	}
 	if (n == -1)
 	{
-		close_fd(fd2);
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
