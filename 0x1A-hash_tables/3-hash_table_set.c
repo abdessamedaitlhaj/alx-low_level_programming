@@ -40,11 +40,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 		tmp = tmp->next;
 	}
-	if (ht->array[index] == NULL)
-	{
-		ht->array[index] = node;
-		return (1);
-	}
 	node->next = ht->array[index];
 	ht->array[index] = node;
 	return (1);
