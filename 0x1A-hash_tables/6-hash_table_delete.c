@@ -20,7 +20,7 @@ void hash_table_delete(hash_table_t *ht)
 		while (tmp1)
 		{
 			tmp2 = tmp1;
-			tmp1->tmp1->next;
+			tmp1 = tmp1->next;
 			free(tmp2->key);
 			free(tmp2->value);
 			free(tmp2);
