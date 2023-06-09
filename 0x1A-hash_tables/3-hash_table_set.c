@@ -17,7 +17,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (node == NULL)
 		return (0);
 
-	if (key == NULLi || key == "" || value == NULL)
+	if (key == NULL || key == "" || value == NULL)
 	{
 		free(node);
 		return (0);
