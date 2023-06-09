@@ -27,34 +27,25 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	strcpy(node->key, key);
 	strcpy(node->value, value);
 	node->next = NULL;
-
 	index = hash_djb2((unsigned char *)key) % ht->size;
-
 	tmp = ht->array[index];
-	while(tmp)
+	while (tmp)
 	{
 		if (strcmp(tmp->key, key) == 0)
-        	{
-			free(tmp->key);
+		{
 			free(tmp->value);
-			tmp->key = malloc(strlen(key) + 1);
 			tmp->value = malloc(strlen(value) + 1);
-			strcpy(tmp->key, key);
 			strcpy(tmp->value, value);
 			return (1);
-        	}
+		}
 		tmp = tmp->next;
 	}
-
-
 	if (ht->array[index] == NULL)
 	{
 		ht->array[index] = node;
 		return (1);
 	}
-
 	node->next = ht->array[index];
 	ht->array[index] = node;
-
 	return (1);
 }
