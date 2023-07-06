@@ -1,11 +1,11 @@
-### C - Hash tables
-## About this project :
+## C - Hash tables
+### About this project :
 + Hash functions and how to make a good one.
 + How hash tables work and how to use them.
 + What is a collision and what are the main ways of dealing with collisions in the context of a hash table.
 + The advantages and drawbacks of using hash tables.
 + What are the most common use cases of hash tables.
-## Implemented tasks:
+### Implemented tasks:
 + Function that creates a hash table.
 + Hash function implementing the djb2 algorithm.
 + Function that gives you the index of a key.
