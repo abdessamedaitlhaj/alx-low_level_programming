@@ -1,5 +1,5 @@
 #include "hash_tables.h"
-
+#include <stdio.h>
 /**
  * hash_table_print - print hash table
  * @ht: pointer to the hash table
