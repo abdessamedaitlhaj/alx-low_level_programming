@@ -11,28 +11,52 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
-	hash_node_t *node, *new_node;
+	hash_node_t *new_node, *current;
 
-	new_node = malloc(sizeof(hash_node_t));
-	new_node->key = malloc(strlen(key));
-	new_node->value = malloc(strlen(value));
-	new_node->next = NULL;
+	if (ht == NULL || key == NULL || *key == '\0')
+		return (0);
 
-	index = key_index(key, ht->size);
-	node = ht->array[index];
-	while (node)
+	index = key_index((unsigned char *)key, ht->size);
+	current = ht->array[index];
+
+
+	while (current != NULL)
 	{
-		if (strcmp(key, node->key) == 0)
+		if (strcmp(current->key, key) == 0)
 		{
-			free(node->value);
-			node->value = strdup(value);
+			free(current->value);
+			current->value = strdup(value);
 			return (1);
 		}
-		node = node->next;
+		current = current->next;
 	}
+	new_node = create_item((char *)key, (char *)value);
+	if (new_node == NULL)
+		return (0);
 	new_node->next = ht->array[index];
 	ht->array[index] = new_node;
 
-	if (node == NULL or new_node->next == NULL)
-		return (0);
+	return (1);
+}
+
+/**
+ * create_item - create a new item in the array
+ * @key: position at the array
+ * @value: the value assigned at a specific position
+ * Return: new element in the array of linked list
+ */
+hash_node_t *create_item(char *key, char *value)
+{
+	hash_node_t *item;
+
+	item = malloc(sizeof(hash_node_t));
+	if (item == NULL)
+		return (NULL);
+
+	item->key = malloc(strlen(key) + 1);
+	item->value = malloc(strlen(value) + 1);
+	strcpy(item->key, key);
+	strcpy(item->value, value);
+
+	return (item);
 }
