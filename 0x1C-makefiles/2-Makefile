@@ -1,5 +1,5 @@
-CC :=  gcc
-SRC := main.c school.c
+CC =  gcc
+SRC = main.c school.c
 NAME = school
 OBJ = $(SRC:.c=.o)
 
@@ -9,4 +9,4 @@ $(NAME): $(OBJ)
 	$(CC) $^ -o $(NAME)
 
 %.o: %.c m.h
-	$(CC) -c $^
+	$(CC) -c -o $@ $^ 
