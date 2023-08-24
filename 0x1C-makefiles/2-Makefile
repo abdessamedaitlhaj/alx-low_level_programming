@@ -5,8 +5,9 @@ OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-%.o: %.c m.h
-	$(CC) -c -o $@ $^ 
 
-$(NAME): 
-	$(CC) $(OBJ) -o $(NAME)
+$(NAME): $(OBJ)
+	$(CC) -o $@ $^
+
+%.o: %.c m.h
+	$(CC) -c -o $@ $< 
