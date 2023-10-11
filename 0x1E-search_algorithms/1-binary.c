@@ -1,7 +1,7 @@
 #include "search_algos.h"
 
 /**
- * print - print the array
+ * print_t - print the array
  * @array: a pointer to the first element of the array to search in
  * @size: the number of elements in array
  *
