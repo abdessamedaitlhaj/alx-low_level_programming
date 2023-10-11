@@ -7,7 +7,7 @@
  *
  * Return: nothing
  */
-void print(int *array, size_t size)
+void print_t(int *array, size_t size)
 {
 	size_t i;
 
@@ -42,7 +42,7 @@ int binary_search(int *array, size_t size, int value)
 
 	while (left <= right)
 	{
-		print(array + left, right - left + 1);
+		print_t(array + left, right - left + 1);
 		mid = left + (right - left) / 2;
 		if (array[mid] == value)
 			return (mid);
